@@ -31,22 +31,22 @@ powCon1$DateTime <- powCon1$Date1+powCon1$Time1
 #-------------------
 
 par(mfcol=c(2,2))
-par(mar=c(3,2.5,2,2))
+par(mar=c(3,4.3,2,0.5))
 
 #### sub-plot 1
-plot(powCon1$DateTime,powCon1$Global_active_power,type="l",ylab="Global Active Power (kilowatts)")
+plot(powCon1$DateTime,powCon1$Global_active_power,type="l",ylab="Global Active Power (kilowatts)", cex.lab=0.85)
 
 #### sub-plot 2
-plot(powCon1$DateTime,powCon1$Sub_metering_1,type = "l",ylab = "Energy sub metering")
+plot(powCon1$DateTime,powCon1$Sub_metering_1,type = "l",ylab = "Energy sub metering", cex.lab=0.85)
 lines(powCon1$DateTime,powCon1$Sub_metering_2,type = "l",col="red")
 lines(powCon1$DateTime,powCon1$Sub_metering_3,type = "l",col="blue")
-legend("topright", names(powCon1)[7:9], lty = "solid",col=c('black','red','blue'), cex=0.65, bty="n")
+legend("topright", names(powCon1)[7:9], lty = 1,col=c('black','red','blue'), bty="n", pt.cex=1, cex=0.65)
 
 #### sub-plot 3
-plot(powCon1$DateTime,powCon1$Voltage,type="l",ylab="Voltage")
+plot(powCon1$DateTime,powCon1$Voltage,type="l",ylab="Voltage", cex.lab=0.85)
 
 #### sub-plot 4
-plot(powCon1$DateTime,powCon1$Global_reactive_power,type="l",ylab="Global_reactive_power")
+plot(powCon1$DateTime,powCon1$Global_reactive_power,type="l",ylab="Global_reactive_power", cex.lab=0.85)
 
 dev.copy(png,'plot4.png')
 dev.off()
